@@ -1,35 +1,28 @@
 <template>
-  <ul id="contents">
-    <li>
-      <img src="../manga/1.png">
-    </li>
-    <li>
-      <img src="../manga/2.png">
-    </li>
-    <li>
-      <img src="../manga/3.png">
-    </li>
-    <li>
-      <img src="../manga/4.png">
-    </li>
-    <li>
-      <img src="../manga/5.png">
-    </li>
-    <li>
-      <img src="../manga/6.png">
-    </li>
-    <li>
-      <img src="../manga/7.png">
-    </li>
-    <li>
-      <img src="../manga/8.png">
-    </li>
-  </ul>
+    <ul id="contents">
+      <li v-for="item in list"><img v-bind:src="'' + item.img + ''"></li>
+    </ul>
 </template>
 
+import Vue from 'vue'
 <script>
 export default {
-  name: 'Manga'
+  name: 'Manga',
+  data: function(){
+      return {
+      list: [
+        { img: require('../manga/1.png') },
+        { img: require('../manga/2.png') },
+        { img: require('../manga/3.png') },
+        { img: require('../manga/4.png') },
+        { img: require('../manga/5.png') },
+        { img: require('../manga/6.png') },
+        { img: require('../manga/7.png') },
+        { img: require('../manga/8.png') },
+        { img: require('../manga/9.png') }
+      ]
+    }
+  }
 }
 </script>
 
